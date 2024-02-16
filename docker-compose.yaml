@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  ros2:
+    image: ros2:latest #Make sure you build the docker file with name 'ros2' or change the name here
+    stdin_open: true
+    tty: true
+    restart: always
+    environment:
+      - DISPLAY=novnc:0.0
+    networks:
+      - ros2_net
+    volumes:
+      - ../volume:/ros2/src/
+  novnc:
+    image: theasp/novnc:latest
+    restart: always
+    environment:
+      - DISPLAY_WIDTH=2560
+      - DISPLAY_HEIGHT=1440
+    ports:
+      - "8080:8080"
+    networks:
+      - ros2_net
+
+networks:
+  ros2_net:
