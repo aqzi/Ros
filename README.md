@@ -9,17 +9,9 @@ This repository contains a minimal codebase for initializing the Ros2 environmen
 
 ## Demo
 1. Open terminal
-2. Run: `docker-compose exec ros2 bash`
+2. Run: `sh ros2.sh`
 3. Run: `ros2 run turtlesim turtlesim_node`
 4. Open second terminal
-5. Run: `docker-compose exec ros2 bash`
+5. Run: `sh ros2.sh`
 6. Run: `ros2 run turtlesim turtle_teleop_key`
 7. Go to: http://localhost:8080/vnc.html
-
-## Optional
-It can be annoying to execute `docker-compose exec ros2 bash` each time to start the Ros2 env. To solve this issue you can add an alias in your .zshrc or .batchrc file.
-
-1. Run: `alias ros2='docker-compose exec ros2 bash'`
-2. Run: `source ~/.zshrc` or `source ~/.bashrc`
-
-Now you can start the Ros2 env using the `ros2` command.
